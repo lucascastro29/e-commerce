@@ -139,7 +139,7 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-main{
+.mainindex{
   display: flex;
   align-items: center;
   padding: 40px;
@@ -148,7 +148,7 @@ main{
   background-size: cover;
   background-repeat: no-repeat;
   }
-  
+
 .formlogin{
   border:0px solid black;
   padding: 25px;
@@ -178,7 +178,7 @@ main{
  box-shadow: black 5px;
 
 }
-div{display: flex;
+.divindex{display: flex;
 flex-direction: column;
 justify-content: center;
 margin: 0 auto;}
