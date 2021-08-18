@@ -164,7 +164,8 @@ a.custom-card:hover {
   margin: 10px; padding: 5px 10px;
 }
 .submitb{
-  padding: 15px;
+  width: 140px;
+  height: 40px;
   border: 0px solid black;
   border-radius: 3%;
   background-color: #007bff;
