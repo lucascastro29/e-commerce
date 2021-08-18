@@ -1,14 +1,14 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-document.getElementById("submitb").addEventListener("click",function(e){
+document.addEventListener("DOMContentLoaded", function(e) {
     
-    let inputEmail=document.getElementById("Email");
-    let inputPassword=Document.getElementById("password");
+    document.getElementById("submitb").addEventListener(click,function(){
+      let Email=document.getElementById("Email");
+      let Password=document.getElementById("password")
+      window.location.href="index.html"
+    })
 
-    if(inputEmail.value===true && inputPassword.value===true){ 
-    window.location.href= "index.html";
-    }
+   
 })
-});
+
