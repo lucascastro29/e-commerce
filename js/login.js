@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
     document.getElementById("submitb").addEventListener("click",function(){
       let Email=document.getElementById("Email");
       let Password=document.getElementById("password")
-      if(Email.value && Password.value){window.location.href="index.html"}
+      if(document.Email.value && document.Password.value){window.location.href="index.html"}
+      
      
     })
 
