@@ -139,3 +139,11 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+#mainproducts{
+  height: 100px;
+  width: 100%;
+  background-color:white;
+  border: 5px solid black;
+  margin-top: 20px;
+ 
+}
