@@ -3,14 +3,12 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e) {
 
-    document.getElementById("submitb").addEventListener("click",function(){
-      let Email=document.getElementById("Email");
-      let Password=document.getElementById("password")
-      if(Email.checkValidity()==="true" && Password.checkValidity()==="true"){window.location.href="index.html"}
+    document.getElementById("submitb").addEventListener("click",function(e){
+      if(document.getElementById("pordios").value==="true"){Window.location.href="index.html"}
       
      
     })
-
+  
    
 })
 var getJSONDATA = function(url){
