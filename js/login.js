@@ -6,11 +6,30 @@ document.addEventListener("DOMContentLoaded", function(e) {
     document.getElementById("submitb").addEventListener("click",function(){
       let Email=document.getElementById("Email");
       let Password=document.getElementById("password")
-      if(document.Email.value && document.Password.value){window.location.href="index.html"}
+      if(Email.checkValidity() && Password.checkValidity()){window.location.href="index.html"}
       
      
     })
 
    
 })
+var getJSONDATA = function(url){
+  
+  var result={}
+  return fetch(url).then(response=>{
+    if(response.ok){
+      return response.json()
+    }else{
+      throw Error(response.statusText)
+    }
+  }).then(function(response){
+    result.status="ok"
+    result.data=response
+    return result
+  }).catch(function(error){
+    result.status="error"
+    result.data=error
+    return result
+  })
+}
 
