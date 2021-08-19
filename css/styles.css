@@ -139,12 +139,20 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
-#mainproducts{
+
+#divproducts main{
+  padding: 5%;
+
+  width: 60%;
+  background-color:white;
+  border: 0px solid ;
+  margin: 20px;
+ border-radius: 2%;
+}
+
+#divproducts{
+  background-color: #92BFD2;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background-color:white;
-  border: 5px solid black;
-  margin-top: 20px;
- 
+  align-items: center;
 }
