@@ -3,16 +3,10 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e) {
 
-    document.getElementById("submitb").addEventListener("click",function(e){
-      if(document.getElementById("pordios").value==="true"){Window.location.href="index.html"}
-      
-     
-    })
-    
-    
     
   
-   
+    
+
 })
 
 

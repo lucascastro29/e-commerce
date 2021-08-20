@@ -160,9 +160,11 @@ a.custom-card:hover {
   border-radius: 2%;
   margin: 10px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 #mainproducts div img{
-  height: 200px;
-  display: flex;
-  
+  height: 40%;
+  margin: 20px;
+  border: 3px solid black;
 }
