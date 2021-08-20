@@ -1,103 +1,109 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>eMercado - Todo lo que busques está aquí</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
-
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <style>
-    html, body{
-      height: 100%;
-    }
-
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-      background: url(data:image/jpeg;base64,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);
-      background-size: cover;
-      background-repeat: no-repeat;
-      }
-    .formlogin{
-      border:0px solid black;
-      padding: 25px;
-      border-radius: 3%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: white;
-    }
-    .formlogin input{text-align: center;
-      margin: 10px; padding: 5px 10px;
-    }
-    #submitb{
-      padding: 10px 45px;
-      border: 0px solid black;
-      border-radius: 3%;
-      background-color: #007bff;
-      color: white;
-      margin-bottom: 5px;
-    }
-    .formlogin img{
-      width: 150px;
-      height: auto;
-     margin-bottom:10px;
-     
-
-    }
-    div{display: flex;
-    flex-direction: column;
-  justify-content: center;
-margin: 0 auto;}
-
-.account{color: #fff;
-  margin-top: 5px;
-}
-
-    
-    
-  </style> 
-</head>
-
-<body class="text-center">
-  <h1 id="logintitle"></h1><br>
-  <div>
-      <form class="formlogin" id="pordios" action="window.location.href='index.html'" >
-        <label for="Email" style="font-size: 70px; padding: 10;"><img src="C:\Users\lucas\Desktop\proyectos jap\E-commerce\Proyecto\img\loginfoto.svg" alt="" sizes="20px ">
-        </label>
-        <input type="email" name="Email" id="Email" placeholder="Email adress" required>
-        <input type="password" name="password" id="password" placeholder="Password" required>
-        <label class="remember" for="remember">
-        <input type="checkbox" class="remember" id="remember">
-          Remember me
-        </label> 
-        <input id="submitb" type="submit" value="Sing in">
-   
-      </form>
- <p class="account">You don't have an account? <a style="color: white;" href="">register</a></p>
-  </div>
-   
-  
- 
-  
-  
-  
-
-  <script src="js/init.js"></script>
-  <script src="js/login.js"></script>
-</body>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1 bg-dark">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      </div>
+    </nav>
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="m-5">
+          <h1></h1>
+        </div>
+      </section>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src="img/cat1.jpg">
+                <h3 class="m-3">Autos (122)</h3>
+                <div class="card-body">
+                  <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
+                  <h3 class="m-3">Juguetes (354)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
+                  </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
+                  <h3 class="m-3">Muebles (157)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
+                  </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
+                  <h3 class="m-3">Herramientas (452)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
+                  </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
+                  <h3 class="m-3">Computadoras (724)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
+                  </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                  <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
+                  <h3 class="m-3">Vestimenta (841)</h3>
+                  <div class="card-body">
+                    <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p>
+                  </div>
+                </a>
+            </div>
+          </div>
+          <div class="row">
+              <a type="button" class="btn btn-light btn-lg btn-block" href="categories.html">Ver todas</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+  </body>
 </html>
