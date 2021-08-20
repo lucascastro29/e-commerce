@@ -163,4 +163,6 @@ a.custom-card:hover {
 }
 #mainproducts div img{
   height: 200px;
+  display: flex;
+  
 }
