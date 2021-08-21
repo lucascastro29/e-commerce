@@ -38,8 +38,7 @@ function showproducts(array){
   document.addEventListener("DOMContentLoaded", function (e) {
      getJSONDATA(PRODUCTS_URL).then(function(result){
          if(result.status==="ok"){
-             products=result.data;
-             showproducts(products)
+             showproducts(result.data)
          }
      })
      
