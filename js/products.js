@@ -40,7 +40,8 @@ function showproducts(array){
          if(result.status==="ok"){
              showproducts(result.data)
          }
-     })
-     
-      
+     });
+     let filtro= getElementById("filtro")
+
+  
   })
