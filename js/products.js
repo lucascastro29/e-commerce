@@ -34,14 +34,18 @@ function showproducts(array){
     document.getElementById("mainproducts").innerHTML=content;
 }
 
-
   document.addEventListener("DOMContentLoaded", function (e) {
      getJSONDATA(PRODUCTS_URL).then(function(result){
          if(result.status==="ok"){
              showproducts(result.data)
          }
      });
-     let filtro= getElementById("filtro")
+    
+  })
 
   
+let filtro= getElementById("filtro");
+  document.addEventListener("DomContentLoaded", function(){
+    filtro.removeAttribute("Precio")
+    
   })

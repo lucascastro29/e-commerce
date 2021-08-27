@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 document.getElementById('form').addEventListener('submit',function(){
 localStorage.clear()
-    var inputEmail= document.getElementById("Email")
-localStorage.setItem("email",inputEmail.value)
+    var inputEmail= document.getElementById("Email").value
+localStorage.setItem("email",inputEmail)
 })
 
