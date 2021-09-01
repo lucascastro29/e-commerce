@@ -1,35 +1,28 @@
-var getJSONDATA = function(url){
-  
-  var result={}
-  return fetch(url).then(response=>{
-    if(response.ok){
-      return response.json()
-    }else{
-      throw Error(response.statusText)
-    }
-  }).then(function(response){
-    result.status="ok"
-    result.data=response
-    return result
-  }).catch(function(error){
-    result.status="error"
-    result.data=error
-    return result
-  })
-}
+
+const minp=undefined;
+const maxp=undefined;
+
+
 function showproducts(array){
     let content=''
 
     array.forEach(element => {
-        content +='<div>'
+
+      if(((minp==undefined)||(element.cost)>=minp)&&
+      ((maxp==undefined)||(element.cost<=maxp))){
+
+        if (buscar==undefined||element.name.toLowerCase().includes(buscar)){
+
+          content +='<div>'
         content +='<img src="'+element.imgSrc+'" alt=""></img><br>'
         content +='Nombre: '+ element.name+'<br>';
         content +='Precio: '+ element.currency+element.cost+'<br>';
         content +='vendidos: '+element.soldCount+'<br>';
         content +="Descripción: "+element.description+'<br>';
         content +='</div>';
-        
-        
+    
+        }}
+  
     });
     document.getElementById("mainproducts").innerHTML=content;
 }
@@ -43,9 +36,61 @@ function showproducts(array){
     
   })
 
+  function sortproducts(criterio,array){
+    let result=[];
+    if(criterio===1){
+      result=array.sort(function(a,b){
+        if(a.cost<b.cost){return-1}
+      if(a.cost>b.cost){return 1}
+      return 0;
+    });
+  }else if(criterio===2){
+      result=array.sort(function(a,b){
+        if(a.cost>b.cost){return-1}
+      if(a.cost<b.cost){return 1}
+      return 0;
+    })
+  }else if(criterio===3){
+    result=array.sort(function(a,b){
+      if(a.soldCount>b.soldCount){return-1}
+      if(a.soldCount<b.soldCount){return 1}
+      return 0;
+    });
+  }
+    return result;
   
-let filtro= getElementById("filtro");
-  document.addEventListener("DomContentLoaded", function(){
-    filtro.removeAttribute("Precio")
+  }
+
+document.getElementById('Descendente').addEventListener('click',function(e){
+getJSONDATA(PRODUCTS_URL).then(function(result){
+  
+    let productos=sortproducts(1,result.data);
+    showproducts(productos)
+})
+
+})
+document.getElementById('Ascendente').addEventListener('click',function(e){
+  getJSONDATA(PRODUCTS_URL).then(function(result){
     
+      let productos=sortproducts(2,result.data);
+      showproducts(productos)
   })
+  
+  })
+  document.getElementById('Relevancia').addEventListener('click',function(e){
+    getJSONDATA(PRODUCTS_URL).then(function(result){
+      
+        let productos=sortproducts(3,result.data);
+        showproducts(productos)
+    })
+    
+    })
+  
+document.getElementById('filtro').addEventListener('click',function(){
+  minp=document.getElementById('minimo').value;
+  maxp=document.getElementById('maximo').value;
+  
+  if((minp != undefined) && (minp !="") && (parseInt(minp))>=0){
+    minp = parseInt(minp);}
+    if((maxp != undefined) && (maxp != "")&&(parseInt(maxp))>=0)
+})
