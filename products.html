@@ -24,39 +24,38 @@
         <a class="py-2 d-none d-md-inline-block" id="Usuario" href="#"></a>
       </div>
     </nav>
-      <div id="divproducts">
+    <div id="divproducts">        
         
-        <main>
-          
-            
-            <div id=filtro-rango>
+        <div class="text-center p-4">
+          <h2>Productos</h2>
+        </div>  
 
-              <p>Ordenar por:</p>
-          
-              <button id="Descendente">Menor precio</button>
-          
-              <button id="Ascendente">Mayor precio</button>
-              <button id="Relevancia">Mayor Relevancia</button>
-          
-              <p>Filtrar por precio</p>
-          
-              <input type="number" placeholder="minimo" id="minimo"> <br><br>
-          
-              <input type="number" placeholder="maximo" id="maximo"> <br><br>
-          
-              <button id="filtro">Filtrar</button>
-          
-              <button id="limpiar">Limpiar</button>
-          
-              <input type="search" placeholder="Buscar" id="buscar">
-          
-            </div>
-          
-          <main id="mainproducts">
-
-          </main>
-        </main>
+        <input type="search" placeholder="Buscar" id="buscar">
+       <div>
+         <p style="margin:0px auto;">Ordenar por:</p>
       </div>
+        
+          
+        <button id="Descendente">precios Desc</button> 
+        <button id="Ascendente">precios Ascen</button>
+        <button id="Relevancia">Relevancia</button>
+          
+              
+        <div>
+          <p style="margin: 0px auto;">Precio:</p>
+          <input type="number" placeholder="Mínimo" id="minimo"><br>
+          <input type="number" placeholder="Máximo" id="maximo"> 
+        </div>
+
+        <button id="filtro">Filtrar</button>
+          
+        <button id="limpiar">Limpiar</button>   
+        <main>  
+        <div id="mainproducts">
+
+        </div>
+      </main>
+    </div>
    
     <footer class="text-muted bg-light">
       <div class="container">
