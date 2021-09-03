@@ -14,11 +14,11 @@ function showproducts(array){
       element.description.toLowerCase().includes(buscar))){
 
         content +='<div>'
-        content +='<img src="'+element.imgSrc+'" alt=""></img><br>'
-        content +='Nombre: '+ element.name+'<br>';
-        content +='Precio: '+ element.currency+element.cost+'<br>';
-        content +='vendidos: '+element.soldCount+'<br>';
-        content +="Descripción: "+element.description+'<br>';
+        content +='<img src="'+element.imgSrc+'" alt=""></img>'
+        content +='<p>Nombre: '+ element.name+'</p>';
+        content +='<p>Precio: '+ element.currency+element.cost+'</p>';
+        content +='<p>vendidos: '+element.soldCount+'</p>';
+        content +="<p>Descripción: "+element.description+'</p>';
         content +='</div>';    
         }
   

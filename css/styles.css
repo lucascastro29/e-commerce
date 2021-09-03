@@ -153,7 +153,6 @@ a.custom-card:hover {
  display:flex;
  align-items: center;
  flex-direction: column;
- justify-content: center;
 }
 
 #divproducts{
@@ -172,7 +171,12 @@ a.custom-card:hover {
   margin: 5px 0px ;
   padding: 0px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+}
+#mainproducts div p{
+  margin:5px 5px ;
+
+
 }
 #mainproducts div img{
   height: 40%;
@@ -192,9 +196,20 @@ a.custom-card:hover {
 }
 #filtros{
   display: flex;
-  flex-direction: row;
+  flex-direction:row;
   width: 100%;
   margin: 10px 20px;
-  flex-wrap: wrap;
+  
+  
+}
+#filtros button{
+  margin: 0px 5px 0px 0px;
+}
+.xd{
+  border: 2px solid black;
+  margin-right: 26%;
+}
+#filtros button:hover{
+  background-color: #afafaf;
   
 }
