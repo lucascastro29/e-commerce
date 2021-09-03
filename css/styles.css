@@ -189,6 +189,7 @@ a.custom-card:hover {
 
 #mainproducts div:hover{
   box-shadow: 4px 4px 8px rgb(66, 66, 66);
+  cursor: pointer;
 }
 #buscar{
   margin: 15px 0px;
@@ -204,6 +205,9 @@ a.custom-card:hover {
 }
 #filtros button{
   margin: 0px 5px 0px 0px;
+  border: 2px black solid;
+  border-radius: 5.5%;
+  
 }
 .xd{
   border: 2px solid black;
@@ -211,5 +215,4 @@ a.custom-card:hover {
 }
 #filtros button:hover{
   background-color: #afafaf;
-  
 }
