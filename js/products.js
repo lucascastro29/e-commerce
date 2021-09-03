@@ -30,7 +30,7 @@ function showproducts(array){
 //función que ordena un "array" de la forma que sea especificada con el "num"
 function sortproducts(num,array){
   let result=[];
-  if(num===1){
+  if(num===2){
       result=array.sort(function(a,b){
         if(a.cost<b.cost){
           return-1}
@@ -39,7 +39,7 @@ function sortproducts(num,array){
           return 0;
     });
   }else
-  if(num===2){
+  if(num===1){
       result=array.sort(function(a,b){
         if(a.cost>b.cost){
           return-1}
@@ -119,6 +119,8 @@ document.getElementById('buscar').addEventListener('input',function(){
 document.getElementById('limpiar').addEventListener("click",function(){
   document.getElementById("buscar").value="";
   buscar=undefined;
+  minp=undefined;
+  maxp=undefined;
   getJSONData(PRODUCTS_URL).then(function(result){
     showproducts(result.data)
   })
