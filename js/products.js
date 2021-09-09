@@ -6,23 +6,23 @@ var buscar=undefined;
 //funcion para mostrar el array en cuestión y con sus correspondientes if para el buscador y los filtros
 function showproducts(array){
   let content=''
-
-  array.forEach(element => {
-    if(((minp==undefined)||element.cost>=minp)&&
-      ((maxp==undefined)||element.cost<=maxp)&&
-      (buscar==undefined||element.name.toLowerCase().includes(buscar)||
-      element.description.toLowerCase().includes(buscar))){
-
-        content +='<div>'
-        content +='<img src="'+element.imgSrc+'" alt=""></img>'
-        content +='<p>Nombre: '+ element.name+'</p>';
-        content +='<p>Precio: '+ element.currency+element.cost+'</p>';
-        content +='<p>vendidos: '+element.soldCount+'</p>';
-        content +="<p>Descripción: "+element.description+'</p>';
-        content +='</div>';    
-        }
+for (let i = 0; i < array.length; i++) {
+  const element = array[i];
   
-    });
+  if(((minp==undefined)||element.cost>=minp)&&
+  ((maxp==undefined)||element.cost<=maxp)&&
+  (buscar==undefined||element.name.toLowerCase().includes(buscar)||
+  element.description.toLowerCase().includes(buscar))){
+
+    content +='<div onclick="divdirección('+i+')">'
+    content +='<img src="'+element.imgSrc+'" alt=""></img>'
+    content +='<p>Nombre: '+ element.name+'</p>';
+    content +='<p>Precio: '+ element.currency+element.cost+'</p>';
+    content +='<p>vendidos: '+element.soldCount+'</p>';
+    content +="<p>Descripción: "+element.description+'</p>';
+    content +='</div>';    
+    }
+}
 
     document.getElementById("mainproducts").innerHTML=content;
 }
@@ -125,3 +125,7 @@ document.getElementById('limpiar').addEventListener("click",function(){
     showproducts(result.data)
   })
 })
+function divdirección(n){
+  localStorage.setItem("producto",n)
+    window.location="product-info.html"
+}
