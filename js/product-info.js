@@ -1,23 +1,47 @@
 function showproduct(element){
     let content=''
 
+          content +='<div class="text-center p-4"><h2>'+ element.name+'</h2></div>';
+          content +='<div id="mainproducts">'
           content +='<div>'
           content +='<img src="'+element.images[0]+'" alt=""></img>'
-          content +='<p>Nombre: '+ element.name+'</p>';
+          
           content +='<p>Precio: '+ element.currency+element.cost+'</p>';
           content +='<p>vendidos: '+element.soldCount+'</p>';
           content +="<p>Descripción: "+element.description+'</p>';
           content +='</div>';    
+          content +='</div> <br>'
+          content+='<div id="comentar"><textarea name="" id="" cols="30" rows="10">asd</textarea> <button >comentar</button></div>'
+          document.getElementById("main").innerHTML=content;
           
-          document.getElementById("mainproducts").innerHTML=content;
+          
+
       };
   
+function showcomentario(array){
+    let comment=''
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+          comment +='<div>'
+          comment +='<div>'
+          comment +='<p>'+ element.user+':</p><br>';
+          comment +='<p>'+element.description+'</p><br>';
+          comment +="<p>"+element.dateTime+'</p>';
+          comment +='</div>';    
+          comment +='</div> <br>'
+        
+    }
+    document.getElementById("main").innerHTML=comment;
+}
      
   
 
-document.addEventListener("DOMContentLoaded", function(e){
+document.addEventListener("DOMContentLoaded", function(){
 
 getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/').then(function(result){
-    showproduct(result.data)
+    showproduct(result.data);
+        
+    }).then(function(result){
+        getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(result){showcomentario(result.data)})
+    })
 })
-});
