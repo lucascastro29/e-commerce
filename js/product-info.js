@@ -2,7 +2,7 @@ function showproduct(element){
     let content=''
 
           content +='<div>'
-          content +='<img src="'+element.images[1]+'" alt=""></img>'
+          content +='<img src="'+element.images[0]+'" alt=""></img>'
           content +='<p>Nombre: '+ element.name+'</p>';
           content +='<p>Precio: '+ element.currency+element.cost+'</p>';
           content +='<p>vendidos: '+element.soldCount+'</p>';
@@ -16,8 +16,8 @@ function showproduct(element){
   
 
 document.addEventListener("DOMContentLoaded", function(e){
-localStorage.getItem("producto")
-getJSONData(PRODUCT_INFO_URL).then(function(result){
+
+getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/').then(function(result){
     showproduct(result.data)
 })
 });
