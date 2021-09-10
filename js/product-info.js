@@ -12,7 +12,7 @@ function showproduct(element){
           content +='</div>';    
           content +='</div> <br>'
           content+='<div id="comentar"><textarea name="" id="" cols="30" rows="10">asd</textarea> <button >comentar</button></div>'
-          document.getElementById("main").innerHTML=content;
+          document.getElementById("producto").innerHTML=content;
           
           
 
@@ -25,13 +25,13 @@ function showcomentario(array){
           comment +='<div>'
           comment +='<div>'
           comment +='<p>'+ element.user+':</p><br>';
-          comment +='<p>'+element.description+'</p><br>';
+          comment +='<p>'+element.description+'</p>';
           comment +="<p>"+element.dateTime+'</p>';
           comment +='</div>';    
           comment +='</div> <br>'
         
     }
-    document.getElementById("main").innerHTML=comment;
+    document.getElementById("comentarios").innerHTML=comment;
 }
      
   
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(){
 getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/').then(function(result){
     showproduct(result.data);
         
-    }).then(function(result){
+    }).then(function(){
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(result){showcomentario(result.data)})
     })
 })
