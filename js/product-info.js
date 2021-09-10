@@ -33,8 +33,8 @@ function showcomentario(array){
     }
     document.getElementById("comentarios").innerHTML=comment;
 }
-     
-  
+
+
 
 document.addEventListener("DOMContentLoaded", function(){
 
