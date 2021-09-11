@@ -11,7 +11,7 @@ function showproduct(element){
           content +="<p>Descripción: "+element.description+'</p>';
           content +='</div>';    
           content +='</div> <br>'
-          content+='<div id="comentar"><textarea name="" id="" cols="30" rows="10">asd</textarea> <button >comentar</button></div>'
+          content+=''
           document.getElementById("producto").innerHTML=content;
           
           
@@ -23,15 +23,34 @@ function showcomentario(array){
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
           comment +='<div>'
-          comment +='<div>'
-          comment +='<p>'+ element.user+':</p><br>';
+          comment +='<div id="comments">'
+          comment +='<p>'+ element.user+':</p>';
           comment +='<p>'+element.description+'</p>';
           comment +="<p>"+element.dateTime+'</p>';
+
+          if(element.score>4){
+          comment +='<span class="fa fa-star checked"></span>'
+          comment +='<span class="fa fa-star checked"></span>'
+          comment +='<span class="fa fa-star checked"></span>'
+          comment +='<span class="fa fa-star checked"></span>'
+          comment +='<span class="fa fa-star checked"></span>'}else
+          if(element.score>3){
+            comment +='<span class="fa fa-star checked"></span>'
+            comment +='<span class="fa fa-star checked"></span>'
+            comment +='<span class="fa fa-star checked"></span>'
+            comment +='<span class="fa fa-star checked"></span>'
+            comment +='<span class="fa fa-star"></span>'}else
+          if(element.score>2){
+                comment +='<span class="fa fa-star checked"></span>'
+                comment +='<span class="fa fa-star checked"></span>'
+                comment +='<span class="fa fa-star checked"></span>'
+                comment +='<span class="fa fa-star"></span>'
+                comment +='<span class="fa fa-star"></span>'}
           comment +='</div>';    
           comment +='</div> <br>'
         
     }
-    document.getElementById("comentarios").innerHTML=comment;
+    document.getElementById("comentarios").innerHTML+=comment;
 }
 
 
@@ -45,3 +64,35 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(result){showcomentario(result.data)})
     })
 })
+
+function star(n){
+    for (let i = n; i > 0; i--) {
+        document.getElementById("star"+i+"").className +="fa fa-star checked" 
+    }
+}
+
+function comentar(){
+
+    let content='' 
+  
+    content+='<div style="width="100%" ">'
+    content+='<div id="comments">'
+    content+='<p>'+localStorage.getItem("email")+'</p>'
+    content+='<p>'+document.getElementById("textocoment").value+'</p>'
+    
+    content+='<p style=" width="100%"">'+ new Date().getFullYear()  + "-" + (new Date().getMonth() +1) + "-" +new Date().getDate()+' '+new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds()+' '+'</P>'
+    content+='<span id="star1" class="fa fa-star" onclick="star(1)"></span>'
+    content+='<span id="star2" class="fa fa-star" onclick="star(2)"></span>'
+    content+='<span id="star3" class="fa fa-star" onclick="star(3)"></span>'
+    content+='<span id="star4" class="fa fa-star" onclick="star(4)"></span>'
+    content+='<span id="star5" class="fa fa-star" onclick="star(5)"></span>'
+    content+='</div>'
+    content+='</div><br>'
+
+ 
+    document.getElementById("comentarios").innerHTML+=content;
+ 
+ 
+ }
+
+      

@@ -223,3 +223,9 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+#comments{
+  border-radius: 2.5%;
+  border: 2px black solid;
+  width: 100%;
+  margin: 0% auto;
+}
