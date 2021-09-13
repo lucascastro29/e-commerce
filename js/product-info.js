@@ -1,3 +1,5 @@
+
+//muestra los datos de un json
 function showproduct(element){
     let content=''
 
@@ -17,7 +19,7 @@ function showproduct(element){
           
 
       };
-  
+  //muestra los comentarios 
 function showcomentario(array){
     let comment=''
     for (let i = 0; i < array.length; i++) {
@@ -53,7 +55,12 @@ function showcomentario(array){
     document.getElementById("comentarios").innerHTML+=comment;
 }
 
-
+//funcion que colorea las estellas de tu comentario
+function star(n){
+    for (let i = n; i > 0; i--) {
+        document.getElementById("star"+i+"").className +="fa fa-star checked" 
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -65,11 +72,7 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
     })
 })
 
-function star(n){
-    for (let i = n; i > 0; i--) {
-        document.getElementById("star"+i+"").className +="fa fa-star checked" 
-    }
-}
+
 
 function comentar(){
 

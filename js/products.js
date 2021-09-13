@@ -125,6 +125,7 @@ document.getElementById('limpiar').addEventListener("click",function(){
     showproducts(result.data)
   })
 })
+//redirección
 function divdirección(n){
   localStorage.setItem("producto",n)
     window.location="product-info.html"
