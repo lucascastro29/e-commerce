@@ -1,25 +1,25 @@
 
 //muestra los datos de un json
 function showproduct(element){
-    let content=''
+    let content=`
 
-          content +='<div class="text-center p-4"><h2>'+ element.name+'</h2></div>';
-          content +='<div id="mainproducts">'
-          content +='<div>'
-          content +='<img src="${element.images[0]}" alt=""></img>'
-          content +='<img src="${element.images[1]}" alt=""></img>'
-          content +='<img src="${element.images[2]}" alt=""></img>'
+          <div class="text-center p-4"><h2> ${element.name}</h2></div>;
+          <div id="mainproducts">
+          <div>
+          <img src="${element.images[0]}" alt=""></img>
+          <img src="${element.images[1]}" alt=""></img>
+          <img src="${element.images[2]}" alt=""></img>
 
-          content +='<p>Precio: '+ element.currency+element.cost+'</p>';
-          content +='<p>vendidos: '+element.soldCount+'</p>';
-          content +="<p>Descripción: "+element.description+'</p>';
-          content +='</div>';    
-          content +='</div> <br>'
-          content+=''
+          <p>Precio: ${element.currency} ${element.cost}</p>;
+          <p>vendidos: ${element.soldCount}</p>;
+          <p>Descripción: "${element.description}</p>;
+          </div>;    
+          </div> <br>
+          `
           document.getElementById("producto").innerHTML=content;
           
           
-
+          
       };
   //muestra los comentarios 
 function showcomentario(array){
@@ -66,7 +66,7 @@ function star(n){
 
 document.addEventListener("DOMContentLoaded", function(){
 
-getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/').then(function(result){
+getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/index.Json').then(function(result){
     showproduct(result.data);
         
     }).then(function(){
