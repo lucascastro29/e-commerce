@@ -74,6 +74,7 @@ function showcomentario(array){
     }
     document.getElementById("comentarios").innerHTML+=comment;
 }
+
 var Starvar=0
 //funcion que colorea las estellas de tu comentario
 function star(n){
@@ -82,12 +83,72 @@ function star(n){
     }
     return Starvar=n
 }
+function comentar(){
+
+  let content='' 
+
+  content+='<div style="width="100%" ">'
+  content+='<div id="comments">'
+  content+='<p>'+localStorage.getItem("email")+'</p>'
+  content+='<p>'+document.getElementById("textocoment").value+'</p>'
+  if(Starvar==1){
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+  }else
+   if(Starvar==2){
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+  }else
+  if(Starvar==3){
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+  }else
+  if(Starvar==4){
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star"></span>'
+  }else
+  if(Starvar==5){
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+      content+='<span class="fa fa-star checked"></span>'
+  }else{
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+      content+='<span class="fa fa-star"></span>'
+  }
+
+  content+='<p style=" width="100%"">'+ new Date().getFullYear()  + "-" + (new Date().getMonth() +1) + "-" +new Date().getDate()+' '+new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds()+' '+'</P>'
+  content+='</div>'
+  content+='</div><br>'
+
+
+  document.getElementById("comentarios").innerHTML+=content;
+
+
+}
+
 
 document.addEventListener("DOMContentLoaded", function(){
 
 getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/').then(function(result){
     showproduct(result.data);
-    console.log(showproduct);
+ 
     
         
     }).then(function(){
@@ -97,64 +158,6 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
 
 
 
-function comentar(){
 
-    let content='' 
-  
-    content+='<div style="width="100%" ">'
-    content+='<div id="comments">'
-    content+='<p>'+localStorage.getItem("email")+'</p>'
-    content+='<p>'+document.getElementById("textocoment").value+'</p>'
-    if(Starvar==1){
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-    }else
-     if(Starvar==2){
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-    }else
-    if(Starvar==3){
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-    }else
-    if(Starvar==4){
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star"></span>'
-    }else
-    if(Starvar==5){
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-        content+='<span class="fa fa-star checked"></span>'
-    }else{
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-        content+='<span class="fa fa-star"></span>'
-    }
-
-    content+='<p style=" width="100%"">'+ new Date().getFullYear()  + "-" + (new Date().getMonth() +1) + "-" +new Date().getDate()+' '+new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds()+' '+'</P>'
-    content+='</div>'
-    content+='</div><br>'
-
- 
-    document.getElementById("comentarios").innerHTML+=content;
- 
- 
- }
 
       
