@@ -7,7 +7,8 @@ function showproduct(element){
           content +='<div id="mainproducts">'
           content +='<div>'
           content +='<img src="'+element.images[0]+'" alt=""></img>'
-          
+          content +='<img src="'+element.images[1]+'" alt=""></img>'
+          content +='<img src="'+element.images[2]+'" alt=""></img>'
           content +='<p>Precio: '+ element.currency+element.cost+'</p>';
           content +='<p>vendidos: '+element.soldCount+'</p>';
           content +="<p>Descripción: "+element.description+'</p>';
