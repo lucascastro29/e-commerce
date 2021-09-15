@@ -2,21 +2,39 @@
 //muestra los datos de un json
 function showproduct(element){
     let content=`
-
+    
           <div class="text-center p-4"><h2> ${element.name}</h2></div>;
           <div id="mainproducts">
           <div>
-          <img src="${element.images[0]}" alt=""></img>
-          <img src="${element.images[1]}" alt=""></img>
-          <img src="${element.images[2]}" alt=""></img>
-
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="${element.images[0]}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="${element.images[1]}" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="${element.images[2]}" alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
           <p>Precio: ${element.currency} ${element.cost}</p>;
           <p>vendidos: ${element.soldCount}</p>;
           <p>Descripción: "${element.description}</p>;
           </div>;    
           </div> <br>
+        
           `
-          document.getElementById("producto").innerHTML=content;
+          document.getElementById("producto").innerHTML+=content;
           
           
           
@@ -66,8 +84,10 @@ function star(n){
 
 document.addEventListener("DOMContentLoaded", function(){
 
-getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/index.Json').then(function(result){
+getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/').then(function(result){
     showproduct(result.data);
+    console.log(showproduct);
+    
         
     }).then(function(){
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(result){showcomentario(result.data)})
