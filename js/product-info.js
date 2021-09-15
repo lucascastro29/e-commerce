@@ -6,7 +6,10 @@ function showproduct(element){
           content +='<div class="text-center p-4"><h2>'+ element.name+'</h2></div>';
           content +='<div id="mainproducts">'
           content +='<div>'
-          content +='<img src="'+element.images[0]+'" alt=""></img>'
+          content +='<img src="'+element.img[0]+'" alt=""></img>'
+          content +='<img src="'+element.img[1]+'" alt=""></img>'
+          content +='<img src="'+element.img[2]+'" alt=""></img>'
+
           content +='<p>Precio: '+ element.currency+element.cost+'</p>';
           content +='<p>vendidos: '+element.soldCount+'</p>';
           content +="<p>Descripción: "+element.description+'</p>';
