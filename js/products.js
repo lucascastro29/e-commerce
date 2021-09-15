@@ -14,13 +14,13 @@ for (let i = 0; i < array.length; i++) {
   (buscar==undefined||element.name.toLowerCase().includes(buscar)||
   element.description.toLowerCase().includes(buscar))){
 
-    content +='<div onclick="divdirección('+i+')">'
-    content +='<img src="'+element.imgSrc+'" alt=""></img>'
+    content +='<div id="margin" onclick="divdirección('+i+')">'
+    content +='<img id="imagen" src="'+element.imgSrc+'" alt=""></img>'
     content +='<p>Nombre: '+ element.name+'</p>';
     content +='<p>Precio: '+ element.currency+element.cost+'</p>';
     content +='<p>vendidos: '+element.soldCount+'</p>';
     content +="<p>Descripción: "+element.description+'</p>';
-    content +='</div>';    
+    content +='</div> <br>';    
     }
 }
 

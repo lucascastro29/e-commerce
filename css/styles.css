@@ -149,7 +149,6 @@ a.custom-card:hover {
   background-color:white;
   border: 0px solid ;
   margin:0px 10px;
-
  display:flex;
  align-items: center;
  flex-direction: column;
@@ -169,23 +168,23 @@ a.custom-card:hover {
   margin: 15px 0px;
   width: 60%;
 }
+
 #filtros{
   display: flex;
   flex-direction:row;
   width: 100%;
-  margin: 10px 20px;
-  
-  
+  margin: 10px 20px; 
 }
+
 #filtros button{
   margin: 0px 5px 0px 0px;
   border: 2px black solid;
   border-radius: 5.5%;
-  
 }
 .xd{
   border: 2px solid black;
-  margin-right: 26%;
+  margin-right: 25%;
+  width: 60%;
 }
 #filtros button:hover{
   background-color: #afafaf;
@@ -193,6 +192,7 @@ a.custom-card:hover {
 
 #comentar{display: flex;
   align-items: center;
+  flex-direction: column;
 }
 .checked {
   color: orange;
@@ -202,4 +202,32 @@ a.custom-card:hover {
   border: 2px black solid;
   width: 100%;
   margin: 0% auto;
+}
+#margin{
+  border: 2px solid black;
+  padding: 3px;
+  width: 100%;
+}
+#margin:hover{
+  box-shadow: 0px 5px 5px 2px rgb(68, 68, 68);
+}
+#mainxd{
+  padding: 10px;
+  width: 60%;
+  background-color: white;
+  border: 0px solid;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#mainproducts{
+  width: 100%;
+}
+#imagen{
+  width: 100%;
+}
+#tamaño{ width: 200px;
+  height: 326px;
+
 }
