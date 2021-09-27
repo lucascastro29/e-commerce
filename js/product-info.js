@@ -154,10 +154,13 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
     }).then(function(){
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(result){showcomentario(result.data)})
     })
+    getJSONData(PRODUCTS_URL).then(function(result){
+
+    })
 })
 
 
-
-
-
+function showrelated(array){
+  let products=``
+}
       
