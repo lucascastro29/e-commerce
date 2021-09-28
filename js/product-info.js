@@ -143,14 +143,23 @@ function comentar(){
 
 }
 
+function showrelated(array){
+  let products=`<p>${array.name}</p>
+  <img id="" src="${array.imgSrc}" alt=""></img>`
+  document.getElementById("relacionados").innerHTML+=products
+}
+  
 
 document.addEventListener("DOMContentLoaded", function(){
 
 getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("producto")+'/').then(function(result){
     showproduct(result.data);
- 
-    
-        
+ let product=result.data;
+ getJSONData("https://japdevdep.github.io/ecommerce-api/product/all.json").then(function(result){
+   showrelated(result.data[product.relatedProducts[0]])
+   showrelated(result.data[product.relatedProducts[1]])
+ })
+
     }).then(function(){
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(result){showcomentario(result.data)})
     })
@@ -160,7 +169,4 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
 })
 
 
-function showrelated(array){
-  let products=``
-}
       
