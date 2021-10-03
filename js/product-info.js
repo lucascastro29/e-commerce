@@ -165,11 +165,7 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
    showrelated(result.data[product.relatedProducts[0]],JSON.parse(localStorage.getItem("producto"))-1)
    showrelated(result.data[product.relatedProducts[1]],JSON.parse(localStorage.getItem("producto"))+1)
    }
-   if(JSON.parse(localStorage.getItem("producto"))===3){
-    showrelated(result.data[product.relatedProducts[0]],JSON.parse(localStorage.getItem("producto"))-1)
-  showrelated(result.data[product.relatedProducts[1]],0)
-  }
-
+   
  })
 
     }).then(function(){
