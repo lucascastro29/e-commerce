@@ -143,8 +143,9 @@ function comentar(){
 
 }
 
-function showrelated(array){
-  let products=`<div id="x5"><p>${array.name}</p>
+
+function showrelated(array,num){
+  let products=`<div id="x${num}" onclick="divdirección(${num})"><p>${array.name}</p>
   <img id="img" src="${array.imgSrc}" alt=""></img></div>`
   document.getElementById("relacionados").innerHTML+=products
 }
@@ -156,8 +157,19 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
     showproduct(result.data);
  let product=result.data;
  getJSONData("https://japdevdep.github.io/ecommerce-api/product/all.json").then(function(result){
-   showrelated(result.data[product.relatedProducts[0]])
-   showrelated(result.data[product.relatedProducts[1]])
+
+   if(JSON.parse(localStorage.getItem("producto"))===0){
+     showrelated(result.data[product.relatedProducts[0]],3)
+   showrelated(result.data[product.relatedProducts[1]],JSON.parse(localStorage.getItem("producto"))+1)
+   }else{
+   showrelated(result.data[product.relatedProducts[0]],JSON.parse(localStorage.getItem("producto"))-1)
+   showrelated(result.data[product.relatedProducts[1]],JSON.parse(localStorage.getItem("producto"))+1)
+   }
+   if(JSON.parse(localStorage.getItem("producto"))===3){
+    showrelated(result.data[product.relatedProducts[0]],JSON.parse(localStorage.getItem("producto"))-1)
+  showrelated(result.data[product.relatedProducts[1]],0)
+  }
+
  })
 
     }).then(function(){
@@ -167,6 +179,7 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
 
     })
 })
+
 
 
       

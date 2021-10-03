@@ -42,4 +42,8 @@ document.addEventListener("DOMContentLoaded", function(e){
   var Emailvalue = localStorage.getItem("email") 
   document.getElementById("Usuario").innerHTML='Usuario: '+Emailvalue
 });
+function divdirección(n){
+  localStorage.setItem("producto",n)
+    window.location="product-info.html"
+}
 

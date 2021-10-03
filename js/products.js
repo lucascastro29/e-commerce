@@ -126,7 +126,3 @@ document.getElementById('limpiar').addEventListener("click",function(){
   })
 })
 //redirección
-function divdirección(n){
-  localStorage.setItem("producto",n)
-    window.location="product-info.html"
-}
