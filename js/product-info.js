@@ -144,8 +144,8 @@ function comentar(){
 }
 
 function showrelated(array){
-  let products=`<p>${array.name}</p>
-  <img id="" src="${array.imgSrc}" alt=""></img>`
+  let products=`<div id="x5"><p>${array.name}</p>
+  <img id="img" src="${array.imgSrc}" alt=""></img></div>`
   document.getElementById("relacionados").innerHTML+=products
 }
   
