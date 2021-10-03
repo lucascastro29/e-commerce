@@ -157,7 +157,11 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
     showproduct(result.data);
  let product=result.data;
  getJSONData("https://japdevdep.github.io/ecommerce-api/product/all.json").then(function(result){
-
+ 
+ if(JSON.parse(localStorage.getItem("producto"))===3){
+    showrelated(result.data[product.relatedProducts[0]],JSON.parse(localStorage.getItem("producto"))-1)
+  showrelated(result.data[product.relatedProducts[1]],0)
+  }else
    if(JSON.parse(localStorage.getItem("producto"))===0){
      showrelated(result.data[product.relatedProducts[0]],3)
    showrelated(result.data[product.relatedProducts[1]],JSON.parse(localStorage.getItem("producto"))+1)
@@ -165,7 +169,6 @@ getJSONData('https://lucascastro29.github.io/JsonP'+localStorage.getItem("produc
    showrelated(result.data[product.relatedProducts[0]],JSON.parse(localStorage.getItem("producto"))-1)
    showrelated(result.data[product.relatedProducts[1]],JSON.parse(localStorage.getItem("producto"))+1)
    }
-   
  })
 
     }).then(function(){
