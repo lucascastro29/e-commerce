@@ -236,16 +236,17 @@ a.custom-card:hover {
   flex-direction: row;
   align-items: stretch;
   width: 100%;
-
-
+  overflow: hidden;
 }
 
 #img{
   height: 100%;
   margin: 0px;
 
+  width: 100%;
+
 }
-#x0 #x1 #x2 #x3{
+.x5{
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -257,4 +258,9 @@ a.custom-card:hover {
 .drop{
   background-color: transparent;
   border: transparent;
+}
+.imgfather{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
 }
