@@ -3,11 +3,11 @@
 //elementos HTML presentes.
 
 function showlist(array){
-    let contents=``
+    let content=``
     for (let i = 0; i < array.length; i++) {
-        const element = array[0].articles[i];
+        let element = array.articles[i];
         
-        contents+=`<div class="row">
+        content+=`<div class="row">
         <div class="col-3" style="height:"100px"; "><img src="${element.src}"></div>
         <div class="col-3"><p>${element.name}</p><br><p><strong>${element.currency} ${element.unitCost}</strong></p></div>
         <div class="col-2"><input type="number" value="${element.count}" style="width: 50px; text-align: end;"></div>
@@ -16,7 +16,7 @@ function showlist(array){
         `
         
     }
-    document.getElementById("items").innerHTML+=contents
+    document.getElementById("items").innerHTML=content
 }
 
 
