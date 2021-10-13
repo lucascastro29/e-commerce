@@ -5,7 +5,7 @@
 function showlist(array){
     let contents=``
     for (let i = 0; i < array.length; i++) {
-        const element = array.articles[i];
+        const element = array[0].articles[i];
         
         contents+=`<div class="row">
         <div class="col-3" style="height:"100px"; "><img src="${element.src}"></div>
