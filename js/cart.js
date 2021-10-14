@@ -4,7 +4,7 @@
 
 function showlist(array){
     let content=``
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.articles.length; i++) {
         let element = array.articles[i];
         
         content+=`<div class="row">
@@ -25,3 +25,5 @@ document.addEventListener("DOMContentLoaded", function (){
       showlist(result.data)        
     })
   })
+
+  
