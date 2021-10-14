@@ -2,16 +2,22 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
+function cost(i,unit){
+  let cont=document.getElementById('value'+i+'').value;
+  document.getElementById('suma'+i+'').value=cont*unit
+
+}
+
 function showlist(array){
     let content=``
     for (let i = 0; i < array.articles.length; i++) {
         let element = array.articles[i];
         
-        content+=`<div class="row">
-        <div class="col-3" style="height:"100px"; "><img src="${element.src}"></div>
-        <div class="col-3"><p>${element.name}</p><br><p><strong>${element.currency} ${element.unitCost}</strong></p></div>
-        <div class="col-2"><input type="number" value="${element.count}" style="width: 50px; text-align: end;"></div>
-        <div class="col-2"><p>${element.cost*element.unitCost}</p></div>
+        content+=`<div class="row" style="height:160px; padding:5px; margin:15px;">
+        <div class="col-4 imgfather" style="margin:15px;; " ><img src="${element.src}" style=";height:100%;;width:100%;"></div>
+        <div class="col-4" stile="height:10px"><p>${element.name}</p><br><p><strong>${element.currency} ${element.unitCost}</strong></p></div>
+        <div class="col-2"><input id="value${i}" type="number" value="${element.count}" onchange="cost(${i},${element.unitCost})" style="width: 50px; text-align: end;"></div>
+        <div class="col-1"><input type="number" id="suma${i}" value="" style="width: 50px; text-align: end;"></div>
         </div>
         `
         
@@ -26,4 +32,4 @@ document.addEventListener("DOMContentLoaded", function (){
     })
   })
 
-  
+ 
