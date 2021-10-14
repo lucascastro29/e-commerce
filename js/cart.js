@@ -4,8 +4,12 @@
 
 function cost(i,unit){
   let cont=document.getElementById('value'+i+'').value;
-  document.getElementById('suma'+i+'').value=cont*unit
+  document.getElementById('suma'+i+'').value=cont*unit;
 
+}
+function total(i){
+let sub= document.getElementById('subtotal'+i+'').value
+document.getElementById("total").innerHTML+=sub
 }
 
 function showlist(array){
@@ -17,7 +21,7 @@ function showlist(array){
         <div class="col-4 imgfather" style="margin:15px;; " ><img src="${element.src}" style=";height:100%;;width:100%;"></div>
         <div class="col-4" stile="height:10px"><p>${element.name}</p><br><p><strong>${element.currency} ${element.unitCost}</strong></p></div>
         <div class="col-2"><input id="value${i}" type="number" value="${element.count}" onchange="cost(${i},${element.unitCost})" style="width: 50px; text-align: end;"></div>
-        <div class="col-1"><input type="number" id="suma${i}" value="${element.count*element.unitCost}" style="width: 60px; text-align: end;"></div>
+        <div class="col-1"><input type="number" id="subtotal${i}" value="${element.count*element.unitCost}" onchange="total(${i})" style="width: 60px; text-align: end;"></div>
         </div>
         `
         
