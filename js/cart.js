@@ -62,12 +62,20 @@ function showlist(array){
           sub=40*element.unitCost
         }else{sub=element.unitCost}
 
+<<<<<<< HEAD
         content+=`<div class="row border rounded" style="height:160px;; margin:10px;padding:5px;">
         <div class="col-4 imgfather"><img src="${element.src}" style=";height:100%;;width:100%;"></div>
         <div class="col-4" style="height:10px"><p>${element.name}</p><br><p><strong>${element.currency} ${element.unitCost}</strong></p></div>
         <div class="col-2"><input id="value${i}" type="number" value="${element.count}" onchange="cost(${i},${sub})" style="width: 40px; text-align: end;margin-left:15px;"></div>
         <div class="col-0" style="width:3px;margin-left:15px;" >$</div>
         <p><div class="col-1"id="suma${i}">${element.count*sub}</div></p></div>
+=======
+        content+=`<div class="row border rounded" style="height:165px; padding:0px; margin:15px;">
+        <div class="col-4 imgfather" style="height:160px; " ><img src="${element.src}" style=";height:100%;;width:100%;"></div>
+        <div class="col-4" stile="height:10px"><p>${element.name}</p><br><p><strong>${element.currency} ${element.unitCost}</strong></p></div>
+        <div class="col-1"><input id="value${i}" type="number" value="${element.count}" onchange="cost(${i},${sub})" style="width: 40px; text-align: end;"></div>
+        <div class="col-2" style="margin-left:15px;"><input id="suma${i}"  type="text" value="${element.count*sub}"  style="width: 80px; text-align: end; border:none;" /><input type="hidden" value="0"/></div>
+>>>>>>> 46452d844529b0c6c1b0bd6f915a9768607534a1
         </div>
         `
         
