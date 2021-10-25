@@ -48,3 +48,6 @@ function divdirección(n){
     window.location="product-info.html"
 }
 
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})

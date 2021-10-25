@@ -52,14 +52,103 @@
       </div>
      </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="d-flex justify-content-center">
+<div class="col-6 border rounded" style="height: 800px; margin: 15px;">
+  <div class="col-12">
+    <div class="d-flex justify-content-center" style="margin: 15px;"> <h1>Usuario</h1></div>
+    <br>
+   
+    <div class="d-flex justify-content-center">
+      
+    <div class="col-6 border rounded" style="height: 450px; margin: 15px;">
+      <div class="row" style="margin-left: 0px;"> <h3>Información Personal</h2></div>
+        <br>
+      <p> <strong>Nombre:</strong><div id="Nombre">    </div></p>
+      <p> <strong>Apellido:</strong><div id="Apellido">    </div></p>
+      <p> <strong>Edad:</strong><div id="Edad">    </div></p>
+      <p> <strong>Teléfono:</strong><div id="Teléfono">    </div></p>
+      <p> <strong>Email:</strong><div id="Email">    </div></p>
+      <br>
+      <table style="height: 300px;"><div class="align-bottom" style="margin-left: 0px;"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Cambiar información personal
+      </button></table></div>
+        
+      </div>
+    </div>
+    
+
+    
+    
+  </div>
+</div>
+
+  </div>
+
+
+
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Información Personal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInput1">Nombre</label>
+              <input type="text" class="form-control" id="exampleInput1" aria-describedby="Help1"  placeholder="Nombre">
+              <small id="Help1" class="form-text text-muted">No mostraremos tu Nombre a nadie mas.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInput2">Apellido</label>
+              <input type="text" class="form-control" id="exampleInput2" aria-describedby="Help2"  placeholder="Apellido">
+              <small id="Help2" class="form-text text-muted">No mostraremos tu Apellido a nadie mas.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInput3">Edad</label>
+              <input type="text" class="form-control" id="exampleInput3" aria-describedby="Help3"  placeholder="Edad">
+              <small id="Help3" class="form-text text-muted">No mostraremos tu Edad a nadie mas.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Teléfono</label>
+              <input type="text" class="form-control" id="exampleInput4" aria-describedby="Help4" placeholder= "Teléfono">
+              <small id="Help4" class="form-text text-muted">No mostraremos tu Teléfono a nadie mas.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= "Email">
+              <small id="emailHelp" class="form-text text-muted">No mostraremos tu Email a nadie mas.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+            </div>
+            <div class="form-group form-check">
+              
+            </div>
+           
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
+
+
+
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
