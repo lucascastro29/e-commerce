@@ -14,7 +14,7 @@ for (let i = 0; i < array.length; i++) {
   (buscar==undefined||element.name.toLowerCase().includes(buscar)||
   element.description.toLowerCase().includes(buscar))){
 
-    content +='<div id="margin" onclick="divdirección('+i+')">'
+    content +='<div class="col-lg-3 row border rounded" id="margin" onclick="divdirección('+i+')" style="margin:15px;">'
     content +='<img id="imagen" src="'+element.imgSrc+'" alt=""></img>'
     content +='<p>Nombre: '+ element.name+'</p>';
     content +='<p>Precio: '+ element.currency+element.cost+'</p>';

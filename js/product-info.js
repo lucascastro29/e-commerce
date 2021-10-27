@@ -5,17 +5,17 @@ function showproduct(element){
     
           <div class="text-center p-4"><h2> ${element.name}</h2></div>
           <div id="mainproducts">
-          <div>
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img class="d-block w-100" id="tamaño" src="${element.images[0]}" alt="First slide">
+          <div >
+          <div id="carouselExampleControls"  class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" >
+            <div class="carousel-item active" >
+              <img class="d-block w-100" id="tamaño"  src="${element.images[0]}" alt="First slide">
             </div>
-            <div class="carousel-item">
-             <div class="imgfather"> <img class="d-block w-100" id="tamaño" src="${element.images[1]}" alt="Second slide">
+            <div class="carousel-item" >
+             <div class="imgfather" > <img class="d-block w-100" id="tamaño" src="${element.images[1]}" alt="Second slide">
             </div>
              </div>
-            <div class="carousel-item">
+            <div class="carousel-item" >
               <img class="d-block w-100" id="tamaño" src="${element.images[2]}" alt="Third slide">
             </div>
           </div>
@@ -146,7 +146,7 @@ function comentar(){
 
 
 function showrelated(array,num){
-  let products=`<div id="x${num}" class="x5" onclick="divdirección(${num})"><p>${array.name}</p>
+  let products=`<div id="x${num}"  class="x5 border rounded" onclick="divdirección(${num})"><p>${array.name}</p>
   <div class="imgfather"><img id="img" src="${array.imgSrc}" alt=""></img></div></div>`
   document.getElementById("relacionados").innerHTML+=products
 }

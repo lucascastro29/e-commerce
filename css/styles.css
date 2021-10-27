@@ -186,9 +186,6 @@ a.custom-card:hover {
   margin-right: 25%;
   width: 60%;
 }
-#filtros button:hover{
-  background-color: #afafaf;
-}
 
 #comentar{display: flex;
   align-items: center;
@@ -228,7 +225,7 @@ a.custom-card:hover {
   width: 100%;
 }
 #tamaño{ width: 200px;
-  height: 326px;
+  height: 500px;
 
 }
 #relacionados{
