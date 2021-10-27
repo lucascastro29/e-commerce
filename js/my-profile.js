@@ -2,8 +2,8 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-var objeto={'nombre':'','Apellido':'','Edad':'','Telefono':'','Email':'','Contraseña':''}
-localStorage.setItem('data',JSON.stringify(objeto))
+var objeto={'nombre':'','Apellido':'','Edad':'','Telefono':'','Email':'','Contraseña':'','register':'F'}
+
 
 
 
@@ -19,7 +19,7 @@ function datoscargar(array) {
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
-
+        localStorage.setItem('data',JSON.stringify(objeto))
         datoscargar(JSON.parse(localStorage.getItem('data')))
     
 
