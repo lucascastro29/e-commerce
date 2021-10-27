@@ -62,12 +62,13 @@
       
     <div class="col-6 border rounded" style="height: 450px; margin: 15px;">
       <div class="row" style="margin-left: 0px;"> <h3>Información Personal</h2></div>
-        <br>
-      <p> <strong>Nombre:</strong><div id="Nombre">    </div></p>
-      <p> <strong>Apellido:</strong><div id="Apellido">    </div></p>
-      <p> <strong>Edad:</strong><div id="Edad">    </div></p>
-      <p> <strong>Teléfono:</strong><div id="Teléfono">    </div></p>
-      <p> <strong>Email:</strong><div id="Email">    </div></p>
+        <br><div class="col-12">
+      <div class="row"><p> <strong>Nombre:</strong><div id="Nombre"></div></p></div>    
+      <div class="row"> <p> <strong>Apellido:</strong><div id="Apellido"></div></p></div> 
+      <div class="row"> <p> <strong>Edad:</strong><div id="Edad"></div></p></div> 
+      <div class="row"> <p> <strong>Teléfono:</strong><div id="Teléfono"></div></p></div> 
+      <div class="row"><p> <strong>Email:</strong><div id="Email"></div></p></div> 
+      </div>
       <br>
       <table style="height: 300px;"><div class="align-bottom" style="margin-left: 0px;"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Cambiar información personal
@@ -102,32 +103,32 @@
           <form>
             <div class="form-group">
               <label for="exampleInput1">Nombre</label>
-              <input type="text" class="form-control" id="exampleInput1" aria-describedby="Help1"  placeholder="Nombre">
+              <input type="text" class="form-control" id="exampleInput1" aria-describedby="Help1"  placeholder="Nombre" value="">
               <small id="Help1" class="form-text text-muted">No mostraremos tu Nombre a nadie mas.</small>
             </div>
             <div class="form-group">
               <label for="exampleInput2">Apellido</label>
-              <input type="text" class="form-control" id="exampleInput2" aria-describedby="Help2"  placeholder="Apellido">
+              <input type="text" class="form-control" id="exampleInput2" aria-describedby="Help2"  placeholder="Apellido" value="">
               <small id="Help2" class="form-text text-muted">No mostraremos tu Apellido a nadie mas.</small>
             </div>
             <div class="form-group">
               <label for="exampleInput3">Edad</label>
-              <input type="text" class="form-control" id="exampleInput3" aria-describedby="Help3"  placeholder="Edad">
+              <input type="text" class="form-control" id="exampleInput3" aria-describedby="Help3"  placeholder="Edad" value="">
               <small id="Help3" class="form-text text-muted">No mostraremos tu Edad a nadie mas.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Teléfono</label>
-              <input type="text" class="form-control" id="exampleInput4" aria-describedby="Help4" placeholder= "Teléfono">
+              <input type="text" class="form-control" id="exampleInput4" aria-describedby="Help4" placeholder= "Teléfono" value="">
               <small id="Help4" class="form-text text-muted">No mostraremos tu Teléfono a nadie mas.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email</label>
-              <input type="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= "Email">
+              <input type="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= "Email" value="">
               <small id="emailHelp" class="form-text text-muted">No mostraremos tu Email a nadie mas.</small>
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Contraseña</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña" value="">
             </div>
             <div class="form-group form-check">
               
@@ -137,7 +138,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" id="guardar" class="btn btn-primary">Guardar</button>
         </div>
       </div>
     </div>
