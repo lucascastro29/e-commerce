@@ -10,7 +10,13 @@ var objeto={'nombre':'',
 'Contraseña':'',
 
 }
-let flag=false;
+function flags() {
+    if ( document.getElementById("Nombre").innerHTML===''&&document.getElementById("Apellido").innerHTML===''&&document.getElementById("Edad").innerHTML===''&&
+    document.getElementById("Edad").innerHTML===''&&document.getElementById("Teléfono").innerHTML==='' ) {
+
+    localStorage.setItem('datos',JSON.stringify(objeto)) }
+    
+}
 
 function datoscargar(array) {
     document.getElementById("Nombre").innerHTML=array.nombre
@@ -18,18 +24,17 @@ function datoscargar(array) {
     document.getElementById("Edad").innerHTML=array.Edad
     document.getElementById("Teléfono").innerHTML=array.Telefono
     document.getElementById("Email").innerHTML=array.Email
-flag=true
+
+  let flag={
+     'flag':'true',
+ }
+    localStorage.setItem('flag',JSON.stringify(flag))
     
 }
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
- 
-if (flag===false) {
-    
-    localStorage.setItem('data',JSON.stringify(objeto))
-}else{}
-        
+    flags()
 });
 
 function guardar(array) {
@@ -41,17 +46,12 @@ function guardar(array) {
     array.Email=document.getElementById("exampleInputEmail1").value
     array.Contraseña=document.getElementById("exampleInputPassword1").value
 
-    localStorage.setItem('data',JSON.stringify(array))
-    
+    localStorage.setItem('datos',JSON.stringify(array))
 }
-
-
-
 
 document.getElementById("guardar").addEventListener("click",function () {
     guardar(JSON.parse(localStorage.getItem('data')))
-datoscargar(JSON.parse(localStorage.getItem('data')))
-
+    datoscargar(JSON.parse(localStorage.getItem('data')))
     }
 
 
