@@ -243,6 +243,13 @@ a.custom-card:hover {
   width: 100%;
 
 }
+.img{
+  height: 100%;
+  margin: 0px;
+
+  width: 100%;
+
+}
 .x5{
   text-align: center;
   display: flex;
