@@ -60,36 +60,47 @@
         <div id="items"></div>
       </div>
     
-      <div class="col-lg-3 col-12 border rounded" style="align-items:center; ; height: 200px;margin:15px;background-color: white;">
-        <div class="d-flex justify-content-between" style="margin-top: 15px; padding-top:15px ;">
+      <div class="col-lg-3 col-12 border rounded" style="align-items:center; ; height: 330px;margin:15px;background-color: white;">
+        <div class="d-flex " style="margin-top: 15px; padding-top:15px ;">
      
-          <p id="narticulos" ><strong>Total:</strong><div id="nps">3</div></p>
-          <p><div style="width: 3px;">$</div><div id="totalv">500200</div> </p>
+          <p id="narticulos" ><strong style="margin-right: 5px;">Total:</strong><div id="nps" style="margin-right: 15px;"> 3</div></p>
+          <p><div style="width: 3px;">$</div><div id="totalv" style="margin-left: 5px;">500200</div> </p>
            </div>
             
-        <div  class="" >
           Envio:
          <div class="btn-group">
             <button class="btn btn-secondary btn-sm dropdown-toggle" id="envios" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Gratis: 2-4 Dias
             </button>
             <div class="dropdown-menu">
-              <button class="dropdown-item" onclick=" envio(1)">Gratis: 2-4 Dias</button>
-              <button class="dropdown-item" onclick=" envio(2)">Premium: 1 Dia</button>
-         
+              <button class="dropdown-item" onclick=" envio(1)">Premium: 2-4 Días</button>
+              <button class="dropdown-item" onclick=" envio(2)">Standard: 12-15 Días</button>
+              <button class="dropdown-item" onclick=" envio(3)">Express: 5-8 Días</button>
+
             </div>
-          </div><br>
-                      
-        </div>
+          </div>
+          <div class="col-12">
+            <label for="dir1">Dirección</label>
+      <input type="text" class="form-control" id="dir1" placeholder="">
+      <label for="dir2">País</label>
+      <input type="text" class="form-control" id="dir2" placeholder="">
+                        
+          </div>
+             
+
+
+
+
+
         <div style="margin-top: 5px;"> Medio de Pago:
           <div class="btn-group">
              <button class="btn btn-secondary btn-sm dropdown-toggle" id="envios1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Efectivo
              </button>
              <div class="dropdown-menu">
-               <button class="dropdown-item" onclick=" envio1(1)">Debito: Visa</button>
-               <button class="dropdown-item" onclick=" envio1(2)">Debito: MasterCard</button>
-               <button class="dropdown-item" onclick=" envio1(0)">Efectivo</button>
+               <button class="dropdown-item" onclick=" envio1(1)" data-toggle="modal" data-target="#exampleModalScrollable1">Debito: Visa</button>
+               <button class="dropdown-item" onclick=" envio1(2)" data-toggle="modal" data-target="#exampleModalScrollable1">Debito: MasterCard</button>
+               <button class="dropdown-item" onclick=" envio1(0)" data-toggle="modal" data-target="#exampleModalScrollable1">Transferencia Bancaria</button>
           
              </div>
            </div>  
@@ -98,6 +109,32 @@
       </div>
       <div></div>
     </div>
+
+
+    <div class="modal fade" id="exampleModalScrollable1" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalScrollableTitle"><div id="Tarjeta"></div></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="Modal"></div>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+   
  
 </div>
 </div>

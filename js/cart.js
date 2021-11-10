@@ -32,22 +32,104 @@ function cost(i,unit){
 
 function envio(a){
   let cont=""
-  if (a===1){ cont="Gratis: 2-4 Dias"
+  if (a===1){ cont="Premium: 2-4 Días"
     document.getElementById("envios").innerHTML=cont
+    
   }else{
-    cont="Premium: 1 Dia"
+    cont="Express: 5-8 Días"
     document.getElementById("envios").innerHTML=cont
+  }if (a===2){
+    {
+      cont="Standard: 12-15 Días"
+      document.getElementById("envios").innerHTML=cont
+    }
   }
+  i
 }
 function envio1(a){
   let cont=""
   if (a===1){ cont="Debito: Visa"
     document.getElementById("envios1").innerHTML=cont
+    document.getElementById("Tarjeta").innerHTML="Debito:Visa"
+    document.getElementById("Modal").innerHTML=`<form>
+    <div class="form-group">
+      <label for="tar1">Número de tarjeta</label>
+      <input type="text" class="form-control" id="tar1"  placeholder="13245677842134563">
+    </div>
+    <div class="form-group">
+      <label for="tar2">Nombre</label>
+      <input type="text" class="form-control" id="tar2" placeholder="Lucas">
+    </div>
+    <div class="form-group">
+      <label for="tar3">Apellido</label>
+      <input type="text" class="form-control" id="tar3" placeholder="Dominguez">
+    </div>
+    <div class="row"><div class="form-group col-6">
+      <label for="tar4">Fecha de expiración</label>
+      <input type="text" class="form-control" id="tar4" placeholder="1020"></div>
+      <div class="form-group col-6">
+      <label for="tar5">CVC</label>
+      <input type="text" class="form-control" id="tar5" placeholder="1234">
+    </div></div>
+    
+  </form>`
+
   }else{
     cont="Debito: MasterCard"
     document.getElementById("envios1").innerHTML=cont
-  }if (a===0){ cont="Efectivo "
+    
+    document.getElementById("Tarjeta").innerHTML="Debito:MasterCard"
+    document.getElementById("Modal").innerHTML=`<form>
+    <div class="form-group">
+      <label for="tar1">Número de tarjeta</label>
+      <input type="text" class="form-control" id="tar1"  placeholder="13245677842134563">
+    </div>
+    <div class="form-group">
+      <label for="tar2">Nombre</label>
+      <input type="text" class="form-control" id="tar2" placeholder="Lucas">
+    </div>
+    <div class="form-group">
+      <label for="tar3">Apellido</label>
+      <input type="text" class="form-control" id="tar3" placeholder="Dominguez">
+    </div>
+    <div class="row"><div class="form-group col-6">
+      <label for="tar4">Fecha de expiración</label>
+      <input type="text" class="form-control" id="tar4" placeholder="1020"></div>
+      <div class="form-group col-6">
+      <label for="tar5">CVC</label>
+      <input type="text" class="form-control" id="tar5" placeholder="1234">
+    </div></div>
+    
+  </form>`
+
+  }if (a===0){ cont="Transferencia bancaria"
   document.getElementById("envios1").innerHTML=cont
+  
+  document.getElementById("Tarjeta").innerHTML="Transferencia Bancaria"
+  document.getElementById("Modal").innerHTML=`<form>
+  <div class="form-group">
+    <label for="tar1">Banco</label>
+    <input type="text" class="form-control" id="tar1"  placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="tar2">Nombre</label>
+    <input type="text" class="form-control" id="tar2" placeholder="Lucas">
+  </div>
+  <div class="form-group">
+    <label for="tar3">Apellido</label>
+    <input type="text" class="form-control" id="tar3" placeholder="Dominguez">
+  </div>
+  <div class="row">
+  <div class="form-group col-6">
+    <label for="tar4">Numero de cuenta</label>
+    <input type="text" class="form-control" id="tar4" placeholder=""></div>
+    <div class="form-group col-6">
+    <label for="tar5">Monto</label>
+    <input type="text" class="form-control" id="tar5" placeholder="">
+  </div></div>
+  
+</form>`
+  
 }
 }
 
@@ -83,4 +165,8 @@ document.addEventListener("DOMContentLoaded", function (){
     })
   })
 
- 
+ function miValidacion() {
+   flag=true;
+   
+   
+ }
