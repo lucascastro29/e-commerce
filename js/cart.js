@@ -32,19 +32,20 @@ function cost(i,unit){
 
 function envio(a){
   let cont=""
-  if (a===1){ cont="Premium: 2-4 Días"
+  if (a===0){ cont="Premium: 2-4 Días"
     document.getElementById("envios").innerHTML=cont
+    document.getElementById("totalvo").innerHTML= parseInt(document.getElementById("totalv")) +(15*parseInt(document.getElementById("totalv")))/100
     
-  }else{
-    cont="Express: 5-8 Días"
-    document.getElementById("envios").innerHTML=cont
   }if (a===2){
     {
       cont="Standard: 12-15 Días"
       document.getElementById("envios").innerHTML=cont
     }
+  }else{
+    cont="Express: 5-8 Días"
+    document.getElementById("envios").innerHTML=cont
   }
-  i
+  
 }
 function envio1(a){
   let cont=""
