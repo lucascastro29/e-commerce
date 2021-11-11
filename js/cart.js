@@ -11,6 +11,7 @@ for (let i = 0; i < 2; i++) {
 }
 document.getElementById('totalv').innerHTML=cont;
 }
+
 function np() {
   let cont=0
   for (let i = 0; i < 2; i++) {
@@ -23,30 +24,44 @@ function np() {
   document.getElementById("nps").innerHTML=cont;
 
 }
+
+function subto(){
+  document.getElementById("totalvo").innerHTML= document.getElementById("totalv").innerHTML
+}
+
 function cost(i,unit){
   let cont=document.getElementById('value'+i+'').value;
   document.getElementById('suma'+i+'').innerHTML=cont*unit;
   total()
   np()
+  subto()
 }
+let flag
 
 function envio(a){
   let cont=""
-  if (a===0){ cont="Premium: 2-4 Días"
+  if (a===0){ cont="Premium: 2-4 Días(+15% del subtotal)"
     document.getElementById("envios").innerHTML=cont
-    document.getElementById("totalvo").innerHTML= parseInt(document.getElementById("totalv")) +(15*parseInt(document.getElementById("totalv")))/100
-    
+    document.getElementById("totalvo").innerHTML= parseInt(document.getElementById("totalv").innerHTML) +(15*parseInt(document.getElementById("totalv").innerHTML))/100
+    flag===true
   }if (a===2){
     {
-      cont="Standard: 12-15 Días"
+      cont="Standard: 12-15 Días(+5% del subtotal)"
       document.getElementById("envios").innerHTML=cont
+      document.getElementById("totalvo").innerHTML= parseInt(document.getElementById("totalv").innerHTML) +(5*parseInt(document.getElementById("totalv").innerHTML))/100
+      flag===true
+
     }
-  }else{
-    cont="Express: 5-8 Días"
+  }if (a===3){
+    cont="Express: 5-8 Días(+7% del subtotal)"
     document.getElementById("envios").innerHTML=cont
+    document.getElementById("totalvo").innerHTML= parseInt(document.getElementById("totalv").innerHTML) +(7*parseInt(document.getElementById("totalv").innerHTML))/100
+    flag===true
+
   }
   
 }
+
 function envio1(a){
   let cont=""
   if (a===1){ cont="Debito: Visa"
@@ -146,7 +161,7 @@ function showlist(array){
         }else{sub=element.unitCost}
 
 
-        content+=`<div class="row border rounded" style="height:160px;; margin:10px;padding:5px;">
+        content+=`<div class="row border rounded" style="height:200px;; margin:10px;padding:5px;">
         <div class="col-4 imgfather"><img src="${element.src}" style=";height:100%;;width:100%;"></div>
         <div class="col-4" style="height:10px"><p>${element.name}</p><br><p><strong>${element.currency} ${element.unitCost}</strong></p></div>
         <div class="col-2"><input id="value${i}" type="number" value="${element.count}" onchange="cost(${i},${sub})" style="width: 40px; text-align: end;margin-left:15px;"></div>
@@ -165,6 +180,7 @@ document.addEventListener("DOMContentLoaded", function (){
       showlist(result.data)        
     })
   })
+
 
  function miValidacion() {
    flag=true;
