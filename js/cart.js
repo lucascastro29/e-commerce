@@ -1,6 +1,9 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+
+
+
 function total(){
   let cont=0
 for (let i = 0; i < 2; i++) {
@@ -11,6 +14,9 @@ for (let i = 0; i < 2; i++) {
 }
 document.getElementById('totalv').innerHTML=cont;
 }
+
+
+
 
 function np() {
   let cont=0
@@ -36,41 +42,52 @@ function cost(i,unit){
   np()
   subto()
 }
-let flag
+
+let flag1=0
+
+let flag2=0
+
+let flag3=0
+
+let flag4=0
 
 function envio(a){
+  flag1=1
   let cont=""
   if (a===0){ cont="Premium: 2-4 Días(+15% del subtotal)"
     document.getElementById("envios").innerHTML=cont
     document.getElementById("totalvo").innerHTML= parseInt(document.getElementById("totalv").innerHTML) +(15*parseInt(document.getElementById("totalv").innerHTML))/100
-    flag===true
+    
   }if (a===2){
     {
       cont="Standard: 12-15 Días(+5% del subtotal)"
       document.getElementById("envios").innerHTML=cont
       document.getElementById("totalvo").innerHTML= parseInt(document.getElementById("totalv").innerHTML) +(5*parseInt(document.getElementById("totalv").innerHTML))/100
-      flag===true
+     
 
     }
   }if (a===3){
     cont="Express: 5-8 Días(+7% del subtotal)"
     document.getElementById("envios").innerHTML=cont
     document.getElementById("totalvo").innerHTML= parseInt(document.getElementById("totalv").innerHTML) +(7*parseInt(document.getElementById("totalv").innerHTML))/100
-    flag===true
-
+    
   }
   
 }
-
+let flagform
 function envio1(a){
   let cont=""
+  flag2=1
+
+ flagform=0;
   if (a===1){ cont="Debito: Visa"
+  
     document.getElementById("envios1").innerHTML=cont
     document.getElementById("Tarjeta").innerHTML="Debito:Visa"
-    document.getElementById("Modal").innerHTML=`<form>
+    document.getElementById("Modal").innerHTML=`
     <div class="form-group">
       <label for="tar1">Número de tarjeta</label>
-      <input type="text" class="form-control" id="tar1"  placeholder="13245677842134563">
+      <input type="number" role="none" max="9999999999999999" class="form-control" id="tar1"  placeholder="13245677842134563">
     </div>
     <div class="form-group">
       <label for="tar2">Nombre</label>
@@ -82,23 +99,23 @@ function envio1(a){
     </div>
     <div class="row"><div class="form-group col-6">
       <label for="tar4">Fecha de expiración</label>
-      <input type="text" class="form-control" id="tar4" placeholder="1020"></div>
+      <input type="date" class="form-control" id="tar4" placeholder="1020"></div>
       <div class="form-group col-6">
       <label for="tar5">CVC</label>
-      <input type="text" class="form-control" id="tar5" placeholder="1234">
+      <input type="number" role="none" max="9999" class="form-control" id="tar5" placeholder="1234">
     </div></div>
     
-  </form>`
+  `
 
   }else{
     cont="Debito: MasterCard"
     document.getElementById("envios1").innerHTML=cont
     
     document.getElementById("Tarjeta").innerHTML="Debito:MasterCard"
-    document.getElementById("Modal").innerHTML=`<form>
+    document.getElementById("Modal").innerHTML=`
     <div class="form-group">
       <label for="tar1">Número de tarjeta</label>
-      <input type="text" class="form-control" id="tar1"  placeholder="13245677842134563">
+      <input type="number" role="none" maxlength="16" class="form-control" id="tar1"  placeholder="13245677842134563">
     </div>
     <div class="form-group">
       <label for="tar2">Nombre</label>
@@ -110,22 +127,22 @@ function envio1(a){
     </div>
     <div class="row"><div class="form-group col-6">
       <label for="tar4">Fecha de expiración</label>
-      <input type="text" class="form-control" id="tar4" placeholder="1020"></div>
+      <input type="date" class="form-control" id="tar4" placeholder="1020"></div>
       <div class="form-group col-6">
       <label for="tar5">CVC</label>
-      <input type="text" class="form-control" id="tar5" placeholder="1234">
+      <input type="number" role="none" maxlength="4" class="form-control" id="tar5" placeholder="1234">
     </div></div>
     
-  </form>`
+  `
 
   }if (a===0){ cont="Transferencia bancaria"
   document.getElementById("envios1").innerHTML=cont
   
   document.getElementById("Tarjeta").innerHTML="Transferencia Bancaria"
-  document.getElementById("Modal").innerHTML=`<form>
+  document.getElementById("Modal").innerHTML=`
   <div class="form-group">
     <label for="tar1">Banco</label>
-    <input type="text" class="form-control" id="tar1"  placeholder="">
+    <input type="text" class="form-control" id="tar1"  placeholder="BROU">
   </div>
   <div class="form-group">
     <label for="tar2">Nombre</label>
@@ -138,13 +155,13 @@ function envio1(a){
   <div class="row">
   <div class="form-group col-6">
     <label for="tar4">Numero de cuenta</label>
-    <input type="text" class="form-control" id="tar4" placeholder=""></div>
+    <input type="text" class="form-control" id="tar4" placeholder="12363453"></div>
     <div class="form-group col-6">
     <label for="tar5">Monto</label>
-    <input type="text" class="form-control" id="tar5" placeholder="">
+    <input type="number" role="none" class="form-control" id="tar5" placeholder="$">
   </div></div>
   
-</form>`
+`
   
 }
 }
@@ -182,8 +199,50 @@ document.addEventListener("DOMContentLoaded", function (){
   })
 
 
- function miValidacion() {
-   flag=true;
-   
-   
- }
+  
+
+
+ document.getElementById("modalflag").addEventListener("click",function() {
+
+  if (document.getElementById("tar1").value!="" && document.getElementById("tar2").value!=""
+ && document.getElementById("tar3").value!=""&& document.getElementById("tar5").value!="" 
+ && document.getElementById("tar4").value!="" ) {flagform=1
+    
+  }
+
+
+ 
+})
+
+function miValidacion() {
+  if (flag1===0) {let content=`-Debes seleccionar un tipo de envio<br>`
+    document.getElementById("validationtext").innerHTML+=content
+  }
+  if (flag2===0) {
+    let content=`-Debes seleccionar un medio de Pago<br>`
+    document.getElementById("validationtext").innerHTML+=content
+  }
+  if (flag3===0) {let content=`-Falta ingresar su Dirección<br>`
+  document.getElementById("validationtext").innerHTML+=content
+  }  
+  if (flag4===0) {let content=`-Falta ingresar su País<br>`
+  document.getElementById("validationtext").innerHTML+=content
+  }  
+  if (flagform===0) {let content=`-Debes completar tu información de Medio de Pago<br>`
+  document.getElementById("validationtext").innerHTML+=content
+    
+  }
+   }
+
+
+ document.getElementById("btncomprar").addEventListener("click",function() {
+   if (document.getElementById("dir1").value!="") {flag3=1
+     
+   }
+   if (document.getElementById("dir2").value!="") {flag4=1
+     
+   }
+  miValidacion()
+
+  
+ })
