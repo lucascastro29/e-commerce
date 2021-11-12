@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+      </head>
+      <body>
+        <div class="d-flex justify-content-center">
+         <div class="col-9">
+          
+         <input type="text" name="" id="user" placeholder="user">
+        <input type="password" id="password" placeholder="password">
+        <button type="button"  id="btnLogin" >Login</button>
+          <p><div id="validtext"></div></p>
+        </div>
+        </div>
+
+        <script>
+
+            
+    var getJSONData = function(url){
+    var result = {};
+    return fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }else{
+        throw Error(response.statusText);
+      }
+    })
+    .then(function(response) {
+          result.status = 'ok';
+          result.data = response;
+          return result;
+    })
+    .catch(function(error) {
+        result.status = 'error';
+        result.data = error;
+        return result;
+    });
+    }
+    const usuarios = "https://danikho2020.github.io/json/user.json"
+    
+   let flaguser=false ;
+   let flagpassword=false;
+    
+    function validation(array){
+      
+       array.forEach(element => {
+          if(document.getElementById("user").value===element.user){
+			flaguser=true
+    }
+         
+          if(document.getElementById("password").value===element.password){
+			flagpassword=true
+    }
+    });
+      if (flaguser===false){
+       let content= `-Usuario Incorrecto <br>`
+       document.getElementById("validtext").innerHTML+=content
+    
+    }
+       if (flagpassword===false){
+       let content= `Usuario Incorrecto <br>`
+    document.getElementById("validtext").innerHTML+=content
+    }
+      if((flagpassword===true)&&(flaguser===true)){
+      window.location="JUEGOS.HTML"}
+        
+    
+      
+    }
+    
+    document.getElementById("btnLogin").addEventListener("click",function(){
+      getJSONData(usuarios).then(function(result){
+    validation(result.data)
+  })
+        </script>
+</html>
